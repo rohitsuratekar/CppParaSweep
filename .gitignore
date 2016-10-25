@@ -1,0 +1,7 @@
+*.db
+*.sln
+*.opendb
+*.filters
+*.vcxproj
+Debug/
+*.out
