@@ -1,7 +1,5 @@
 #include "Enzyme.h"
 #include <stdlib.h>  
+#include <fstream>
 
-int getEnzyme()
-{
-	return rand() % 100 + 1;
-}
+
