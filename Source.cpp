@@ -3,6 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <boost/numeric/odeint.hpp>
+#include "BaseFunctions.h"
 using namespace std;
 using namespace boost::numeric::odeint;
 
@@ -11,25 +12,31 @@ using namespace boost::numeric::odeint;
 * Analytic solution is x(t) = sqrt(t) - 1/t
 */
 
-
-vector<double> vec;
+BaseFunctions baseF;
+vector<vector<double>> vec;
 
 void rhs(const double x, double &dxdt, const double t)
 {
 	dxdt = 3.0 / (2.0*t*t) + x / (2.0*t);
 }
 
+
+
 void write_cout(const double &x, const double t)
 {
 	
 //	cout << t << '\t' << x << endl;
-	vec.push_back(t);
-	
+	vector<double> k;
+	k.push_back(t);
+	k.push_back(baseF.getRandom(10,20));
+	vec.push_back(k);
 
 }
 
 // state_type = double
 typedef runge_kutta_dopri5< double > stepper_type;
+
+
 
 
 int main()
@@ -40,10 +47,11 @@ int main()
 	
 	ofstream myfile;
 	myfile.open("example.txt");
-	vector<double>::iterator v = vec.begin();
+	vector<vector<double>> ::iterator v = vec.begin();
 	while (v != vec.end()) {
-		cout << "value of v = " << *v << endl;
-		myfile << "Writing this to a file." << *v << endl;
+		vector<double> m = *v;
+		cout << "value of v = " << m[0] << endl;
+		myfile << m[0] << "\t" << m[1] << endl;
 		v++;
 	}
 	myfile.close();
