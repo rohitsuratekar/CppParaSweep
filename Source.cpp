@@ -1,6 +1,5 @@
 #include <iostream>
-#include <boost\numeric\odeint.hpp>
-
+#include <boost/numeric/odeint.hpp>
 
 using namespace std;
 using namespace boost::numeric::odeint;
