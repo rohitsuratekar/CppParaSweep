@@ -4,6 +4,7 @@
 #include <vector>
 #include <boost/numeric/odeint.hpp>
 #include "BaseFunctions.h"
+#include "Enzyme.h"
 using namespace std;
 using namespace boost::numeric::odeint;
 
@@ -12,7 +13,7 @@ using namespace boost::numeric::odeint;
 * Analytic solution is x(t) = sqrt(t) - 1/t
 */
 
-BaseFunctions baseF;
+BaseFunctions baseFun;
 vector<vector<double>> vec;
 
 void rhs(const double x, double &dxdt, const double t)
@@ -28,7 +29,7 @@ void write_cout(const double &x, const double t)
 //	cout << t << '\t' << x << endl;
 	vector<double> k;
 	k.push_back(t);
-	k.push_back(baseF.getRandom(10,20));
+	k.push_back(baseFun.getRandom(10,20));
 	vec.push_back(k);
 
 }
@@ -39,7 +40,7 @@ typedef runge_kutta_dopri5< double > stepper_type;
 
 
 
-int main()
+int trySave()
 {
 	double x = 0.0;
 	integrate_adaptive(make_controlled(1E-12, 1E-12, stepper_type()),
@@ -56,4 +57,16 @@ int main()
 	}
 	myfile.close();
 	cin.get(); //Need this to stop output window with VS2015
+	return 0;
+}
+
+int main()
+{
+
+	Enzyme pitp = Enzyme("pitp");
+	pitp.setVmax(20.00);
+	pitp.setKm(23);
+	Enzyme dagk = Enzyme("dagk");
+	
+	return 0;
 }
