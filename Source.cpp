@@ -1,7 +1,6 @@
+#define _CRT_SECURE_NO_WARNINGS //Need for compilation with VS2015
 #include <iostream>
-#include <boost\numeric\odeint.hpp>
-
-
+#include <boost/numeric/odeint.hpp>
 using namespace std;
 using namespace boost::numeric::odeint;
 
@@ -29,4 +28,5 @@ int main()
 	double x = 0.0;
 	integrate_adaptive(make_controlled(1E-12, 1E-12, stepper_type()),
 		rhs, x, 1.0, 10.0, 0.1, write_cout);
+	cin.get();
 }
