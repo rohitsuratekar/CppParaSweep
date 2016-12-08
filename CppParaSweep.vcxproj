@@ -110,6 +110,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="functions\BaseFunctions.cpp" />
+    <ClCompile Include="functions\Enzyme.cpp" />
+    <ClCompile Include="functions\Lipids.cpp" />
+    <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\BaseFunctions.h" />
+    <ClInclude Include="headers\Enzyme.h" />
+    <ClInclude Include="headers\Lipids.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
