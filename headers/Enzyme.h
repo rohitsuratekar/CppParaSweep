@@ -1,13 +1,15 @@
 #pragma once
+#include <string> //Load before Enzyme.h
+
 class Enzyme
 {
 private:
-	BaseFunctions baseF;
 	std::string name;
 	double v0, k0, v, k;
 	double randV, randK;
 
 public:
+	Enzyme();
 	Enzyme(const  std::string name);
 	Enzyme(const std::string name, double Vmax, double Km);
 	std::string getName();
