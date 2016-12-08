@@ -69,26 +69,34 @@ double Lipids::getAll()
 
 double Lipids::getRatioPA()
 {
+
 	return (pmpa + erpa) / (pmpi + erpi);
+
 }
 
 double Lipids::getRatioPIP2()
 {
+
 	return pip2 / (pmpi + erpi);
+
 }
 
 double Lipids::getRatioPI4P()
 {
+
 	return pi4p / (pmpi + erpi);
+
 }
 
 double Lipids::getRatioDAG()
 {
+
 	return dag / (pmpi + erpi);
 }
 
 double Lipids::getRatioCDPDAG()
 {
+
 	return cdpdag / (pmpi + erpi);
 }
 

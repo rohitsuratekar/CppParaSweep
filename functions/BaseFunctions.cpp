@@ -1,6 +1,7 @@
 #include <iostream>
 #include "..\headers\BaseFunctions.h"
 
+
 BaseFunctions::BaseFunctions()
 {
 }
@@ -27,6 +28,7 @@ std::vector<double> BaseFunctions::getRandNumbers(double total)
 	double sum = 0;
 	double sumTemp = 0;
 	std::vector<double> allNumbers;
+
 	for (int i = 0; i < sizeof(numberList) - 1; i++) {
 		numberList[i] = getRandom(1, 10);
 		sum = sum + numberList[i];

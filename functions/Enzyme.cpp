@@ -1,6 +1,8 @@
 #include <string> //Load before Enzyme.h
+
 #include "..\headers\BaseFunctions.h"
 #include "..\headers\Enzyme.h"
+
 
 Enzyme::Enzyme(const std::string name)
 {
