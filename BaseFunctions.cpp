@@ -1,8 +1,5 @@
-#include <vector>
 #include <iostream>
 #include "BaseFunctions.h"
-
-using namespace std;
 
 BaseFunctions::BaseFunctions()
 {
@@ -19,7 +16,7 @@ double BaseFunctions::randomizeAround(double original, double range)
 	double max = original + range;
 	return getRandom(min, max);
 }
-double BaseFunctions::calculateError(vector<vector<double>> originalPara, vector<vector<double>> newPara)
+double BaseFunctions::calculateError(std::vector<std::vector<double>> originalPara, std::vector<std::vector<double>> newPara)
 {
 	double error = 0;
 	return 0.0;

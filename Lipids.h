@@ -3,7 +3,6 @@ class Lipids
 {
 private:
 	double r_pip2, r_pi4p, r_dag, r_pa, r_cdpdag;
-	BaseFunctions baseF;
 public:
 	double pmpi, pi4p, pip2, dag, pmpa, erpa, cdpdag, erpi;
 	double wgt_pip2, wgt_pi4p, wgt_pa, wgt_dag, wgt_cdpdag;

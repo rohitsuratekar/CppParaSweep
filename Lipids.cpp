@@ -30,7 +30,7 @@ Lipids::~Lipids()
 
 void Lipids::initializeWithTotal(double totalLipids)
 {
-	
+	BaseFunctions baseF;
 	double totalDistribtion = r_pip2 + r_pi4p + r_dag + r_cdpdag + r_pa + 1;
 	pip2 = (r_pip2 / totalDistribtion)*totalLipids;
 	dag = (r_dag / totalDistribtion)*totalLipids;
@@ -48,6 +48,7 @@ void Lipids::initializeWithTotal(double totalLipids)
 //TODO  
 void Lipids::initiateRandomly(double totalLipid)
 {
+	BaseFunctions baseF;
 	std::vector<double> allConcentrations;
 	double set1, set2, set3, set4;
 	set1 = baseF.getRandom(0, totalLipid);
@@ -55,10 +56,13 @@ void Lipids::initiateRandomly(double totalLipid)
 	totalLipid = totalLipid - set1;
 	set2 = baseF.getRandom(0, totalLipid);
 	allConcentrations.push_back(set2);
-	totalLipid = totalLipid - set3;
+	totalLipid = totalLipid - set2;
 	set3 = baseF.getRandom(0, totalLipid);
 	allConcentrations.push_back(set3);
-
+	totalLipid = totalLipid - set3;
+	set4 = baseF.getRandom(0, totalLipid);
+	allConcentrations.push_back(set4);
+	totalLipid = totalLipid - set4;
 
 }
 
