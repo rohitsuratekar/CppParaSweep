@@ -3,8 +3,8 @@
 #include <fstream>
 #include <vector>
 #include <boost/numeric/odeint.hpp>
-#include "BaseFunctions.h"
-#include "Enzyme.h"
+#include "functions/BaseFunctions.h"
+#include "functions/Enzyme.h"
 using namespace std;
 using namespace boost::numeric::odeint;
 

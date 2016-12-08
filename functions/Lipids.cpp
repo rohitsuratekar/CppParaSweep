@@ -49,21 +49,15 @@ void Lipids::initializeWithTotal(double totalLipids)
 void Lipids::initiateRandomly(double totalLipid)
 {
 	BaseFunctions baseF;
-	std::vector<double> allConcentrations;
-	double set1, set2, set3, set4;
-	set1 = baseF.getRandom(0, totalLipid);
-	allConcentrations.push_back(set1);
-	totalLipid = totalLipid - set1;
-	set2 = baseF.getRandom(0, totalLipid);
-	allConcentrations.push_back(set2);
-	totalLipid = totalLipid - set2;
-	set3 = baseF.getRandom(0, totalLipid);
-	allConcentrations.push_back(set3);
-	totalLipid = totalLipid - set3;
-	set4 = baseF.getRandom(0, totalLipid);
-	allConcentrations.push_back(set4);
-	totalLipid = totalLipid - set4;
-
+	std::vector<double> allConcentrations = baseF.getRandNumbers(totalLipid);
+	pmpi = allConcentrations[0];
+	pi4p = allConcentrations[1];
+	pip2 = allConcentrations[2];
+	dag = allConcentrations[3];
+	pmpa = allConcentrations[4];
+	erpa = allConcentrations[5];
+	cdpdag = allConcentrations[6];
+	erpi = allConcentrations[7];
 }
 
 
