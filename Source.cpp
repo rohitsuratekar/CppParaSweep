@@ -53,6 +53,7 @@ void main() {
 	state_type x = { 1, 2, 3, 4, 5, 6, 7, 8};
 	//integrate(lorenz, x, 0.0, 250.0, 0.1, write_lorenz);
 	integrate(EquationSet(getEnzymeList()), x, 0.0, 250.0, 0.1, getPrinted);
+	system("python plot.py");
 	cin.get();
 }
 
